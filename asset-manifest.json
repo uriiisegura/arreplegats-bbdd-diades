@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/arreplegats-bbdd-diades/static/css/main.41631b3e.css",
+    "main.js": "/arreplegats-bbdd-diades/static/js/main.a9cbba4b.js",
+    "index.html": "/arreplegats-bbdd-diades/index.html",
+    "main.41631b3e.css.map": "/arreplegats-bbdd-diades/static/css/main.41631b3e.css.map",
+    "main.a9cbba4b.js.map": "/arreplegats-bbdd-diades/static/js/main.a9cbba4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41631b3e.css",
+    "static/js/main.a9cbba4b.js"
+  ]
+}
