@@ -1,0 +1,55 @@
+:root {
+	--theme: #15a884;
+	--dark: #222222;
+	--gray: #303030;
+}
+
+#llista .diada {
+	padding: 10px 25px 10px 5px;
+	margin-bottom: -1px;
+}
+#llista .nom {
+	font-weight: bold;
+	font-size: 20px;
+	color: var(--theme);
+}
+#llista .place {
+	font-size: 16px;
+	color: var(--theme);
+}
+#llista .date {
+	font-size: 12px;
+	color: var(--theme);
+}
+#llista .castells {
+	font-size: 16px;
+	color: #ffffff;
+	line-height: 26px;
+}
+
+html, body {
+	margin: 0;
+	background-color: var(--dark);
+	font-family: 'Arial';
+}
+
+#llista .wrap {
+	display: flow-root;
+	padding-top: 50px;
+}
+
+#selector select {
+	background-color: var(--gray);
+	width: 100%;
+	border-radius: 0;
+	border: none;
+	color: #ffffff;
+	padding: 7px 5px;
+	font-size: 18px;
+	position: fixed;
+	z-index: 1000;
+	margin: -1px 0 0 0;
+}
+#selector select:focus {
+	outline: none;
+}
