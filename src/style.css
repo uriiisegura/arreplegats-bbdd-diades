@@ -52,6 +52,7 @@ html, body {
 	color: #ffffff;
 	cursor: pointer;
 	opacity: 0.85;
+	padding: 6px 10px;
 }
 #bbdd .container button:hover {
 	opacity: 1;
@@ -76,6 +77,15 @@ html, body {
 }
 #bbdd tbody tr:nth-child(odd) {
 	background-color: var(--lightTheme);
+}
+
+@media (max-width: 700px) {
+	#bbdd .container,
+	#bbdd .container,
+	#bbdd .container {
+		width: calc(100% - 10px);
+		margin-bottom: 10px;
+	}
 }
 
 .hidden {

@@ -104,7 +104,7 @@ function Llista(props) {
 				poblacions.push(poblacio);
 		});
 		poblacions.sort();
-		poblacionsHTML.push(<option value="none">--- TOTES LES POBLACIONS ---</option>);
+		poblacionsHTML.push(<option value="none">--- TOTES ---</option>);
 		poblacions.forEach(city => {
 			poblacionsHTML.push(<option value={city}>{city}</option>);
 		});
@@ -122,7 +122,7 @@ function Llista(props) {
 			});
 		});
 		castells.sort();
-		castellsHTML.push(<option value="none">--- TOTS ELS CASTELLS ---</option>);
+		castellsHTML.push(<option value="none">--- TOTS ---</option>);
 		castells.forEach(cast => {
 			castellsHTML.push(<option value={cast}>{cast}</option>);
 		});
