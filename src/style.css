@@ -80,17 +80,20 @@ html, body {
 }
 
 @media (max-width: 700px) {
-	#bbdd .container,
-	#bbdd .container,
 	#bbdd .container {
-		width: calc(100% - 10px);
-		margin-bottom: 10px;
+		width: 100%;
+		margin: 0 0 10px;
+	}
+	#bbdd .container input,
+	#bbdd .container select,
+	#bbdd .container button {
+		width: 100%;
 	}
 }
 
 .hidden {
 	display: none;
 }
-#no-results {
+.error {
 	color: #ff6b6b !important;
 }

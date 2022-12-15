@@ -14,13 +14,8 @@ function Llista(props) {
 		return start_temporada <= date && date <= end_temporada;
 	};
 
-	const fromEuropean = (dateString) => {
-		const [day, month, year] = dateString.split("/");
-		return new Date(`${month}/${day}/${year}`);
-	};
-
-	const fromAmerican = (dateString) => {
-		const [year, month, day] = dateString.split("-");
+	const fromEuropean = (dateString, regex = '/') => {
+		const [day, month, year] = dateString.split(regex);
 		return new Date(`${month}/${day}/${year}`);
 	};
 
@@ -147,17 +142,24 @@ function Llista(props) {
 	const loadDiades = () => {
 		let results = 0;
 
-		const date_from = fromAmerican(document.getElementById('date_from').value);
-		const date_to = fromAmerican(document.getElementById('date_to').value);
+		const date_from = fromEuropean(document.getElementById('date_from').value, '-');
+		const date_to = fromEuropean(document.getElementById('date_to').value, '-');
 		const poblacio = document.getElementById('poblacio').value;
 		const castell = document.getElementById('castell').value;
 
 		const table = document.getElementById('results');
 		const help = document.getElementById('help');
 		const noResults = document.getElementById('no-results');
+		const error = document.getElementById('error');
 		table.className = '';
 		help.className = 'hidden';
 		noResults.className = 'hidden';
+		error.className = 'hidden';
+		if (isNaN(date_from) || isNaN(date_to)) {
+			table.className = 'hidden';
+			error.className = 'error';
+			return;
+		}
 		for (var i = 1; i < table.rows.length; i++) {
 			const date = fromEuropean(table.rows[i].cells[0].innerHTML);
 			if (date_from > date || date > date_to) {
@@ -184,7 +186,7 @@ function Llista(props) {
 
 		if (results === 0) {
 			table.className = 'hidden';
-			noResults.className = '';
+			noResults.className = 'error';
 		}
 	};
 
@@ -195,11 +197,11 @@ function Llista(props) {
 			<div className="filters">
 				<div className="container">
 					<label htmlFor="date_from">Des de:</label>
-					<input type="date" id="date_from" defaultValue={year1+"-09-01"}/>
+					<input type="text" id="date_from" defaultValue={"01-09-"+year1}/>
 				</div>
 				<div className="container">
 					<label htmlFor="date_to">Fins a:</label>
-					<input type="date" id="date_to" defaultValue={year2+"-08-31"}/>
+					<input type="text" id="date_to" defaultValue={"31-08-"+year2}/>
 				</div>
 				<div className="container">
 					<label htmlFor="poblacio">Població:</label>
@@ -220,6 +222,7 @@ function Llista(props) {
 			<h1>Actuacions</h1>
 			<h3 id="help">Utilitza els filtres de dalt per a buscar diades.</h3>
 			<h3 id="no-results" className="hidden">No s'han trobat resultats per a aquesta búsqueda.</h3>
+			<h3 id="error" className="hidden">El format de data introduïda no és correcte (dd-mm-aaaa).</h3>
 			<table id="results" className="hidden">
 				<thead>
 					<tr>
