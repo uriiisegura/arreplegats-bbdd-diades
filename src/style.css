@@ -72,10 +72,10 @@ html, body {
 	top: -1px;
 	color: #ffffff;
 }
-#bbdd tbody tr:nth-child(even) {
+#bbdd .striped1 {
 	background-color: var(--darkTheme);
 }
-#bbdd tbody tr:nth-child(odd) {
+#bbdd .striped2 {
 	background-color: var(--lightTheme);
 }
 

@@ -160,6 +160,7 @@ function Llista(props) {
 			error.className = 'error';
 			return;
 		}
+		let stripe = true;
 		for (var i = 1; i < table.rows.length; i++) {
 			const date = fromEuropean(table.rows[i].cells[0].innerHTML);
 			if (date_from > date || date > date_to) {
@@ -180,7 +181,8 @@ function Llista(props) {
 					continue;
 				}
 			}
-			table.rows[i].className = '';
+			table.rows[i].className = 'striped'+(stripe ? 1 : 2);
+			stripe = !stripe;
 			results += 1;
 		}
 
