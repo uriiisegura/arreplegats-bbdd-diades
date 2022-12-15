@@ -37,15 +37,12 @@ function DataProcessor(props) {
                 if (resultat.includes("pd") || resultat.includes("i")) {
                     resultatDavant = resultat;
                     resultat = "";
-                    //delete diades_dict[diada_hash]["castells"][i];
-                    //return;
                 }
                 const agulla = castell["agulla"] === "1" ? "a" : "";
                 const perSota = castell["altres"] === "ps" ? "s" : "";
                 const caminant = castell["altres"] === "cam" ? "cam" : "";
                 const fix4d8 = castell["tipus"].toUpperCase() + "d" + castell["alçada"] === "4d8" && castell["pinya"] === "" ? "sf" : "";
                 const build = castell["tipus"].toUpperCase() + "d" + castell["alçada"] + perSota + agulla + castell["pinya"] + fix4d8 + caminant;
-                //if (build === "Pd5f") console.log(diada_hash)
                 diades_dict[diada_hash]["castells"][i] = {};
                 diades_dict[diada_hash]["castells"][i][ordre] = resultatDavant + build + resultat.toUpperCase();
             });
@@ -62,6 +59,7 @@ function DataProcessor(props) {
         get_data(CASTELLS_URL, (results) => {
             setCastells(aggregate(results.data));
         });
+    // eslint-disable-next-line
     }, []);
 }
 

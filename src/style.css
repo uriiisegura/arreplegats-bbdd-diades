@@ -1,30 +1,11 @@
 :root {
 	--theme: #15a884;
+	--lightTheme: #95d3c4;
+	--darkTheme: #5cb59f;
+	--darkerTheme: #175d4c;
 	--dark: #222222;
 	--gray: #303030;
-}
-
-#llista .diada {
-	padding: 10px 25px 10px 5px;
-	margin-bottom: -1px;
-}
-#llista .nom {
-	font-weight: bold;
-	font-size: 20px;
-	color: var(--theme);
-}
-#llista .place {
-	font-size: 16px;
-	color: var(--theme);
-}
-#llista .date {
-	font-size: 12px;
-	color: var(--theme);
-}
-#llista .castells {
-	font-size: 16px;
-	color: #ffffff;
-	line-height: 26px;
+	--lightGray: #454545;
 }
 
 html, body {
@@ -33,23 +14,73 @@ html, body {
 	font-family: 'Arial';
 }
 
-#llista .wrap {
-	display: flow-root;
-	padding-top: 50px;
+#bbdd h1 {
+	color: var(--theme);
+}
+#bbdd h3 {
+	color: #ffffff;
+	font-weight: normal;
 }
 
-#selector select {
-	background-color: var(--gray);
-	width: 100%;
-	border-radius: 0;
-	border: none;
-	color: #ffffff;
-	padding: 7px 5px;
-	font-size: 18px;
-	position: fixed;
-	z-index: 1000;
-	margin: -1px 0 0 0;
+#bbdd .filters {
+	display: flow-root;
+	margin-bottom: 50px;
 }
-#selector select:focus {
+
+#bbdd .container {
+	float: left;
+	width: calc(20% - 20px);
+	margin: 0 10px;
+}
+#bbdd .container label {
+	color: #ffffff;
+}
+#bbdd .container input,
+#bbdd .container select,
+#bbdd .container button {
+	width: calc(100% - 10px);
 	outline: none;
+	border-radius: 0;
+	border: 1px solid var(--lightGray);
+	background-color: var(--gray);
+	color: var(--theme);
+	padding: 5px 10px;
+}
+#bbdd .container button {
+	margin-top: 18px;
+	background-color: var(--theme);
+	color: #ffffff;
+	cursor: pointer;
+	opacity: 0.85;
+}
+#bbdd .container button:hover {
+	opacity: 1;
+}
+
+#bbdd table {
+	border-collapse: collapse;
+}
+#bbdd table th,
+#bbdd table td {
+	padding: 5px;
+	border: 1px solid var(--dark);
+}
+#bbdd thead tr {
+	background-color: var(--darkerTheme);
+	position: sticky;
+	top: -1px;
+	color: #ffffff;
+}
+#bbdd tbody tr:nth-child(even) {
+	background-color: var(--darkTheme);
+}
+#bbdd tbody tr:nth-child(odd) {
+	background-color: var(--lightTheme);
+}
+
+.hidden {
+	display: none;
+}
+#no-results {
+	color: #ff6b6b !important;
 }
